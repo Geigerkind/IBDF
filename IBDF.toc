@@ -1,0 +1,6 @@
+## Interface: 11200
+## Title: IBDF |cFFFF8080-Shino-|r
+## Notes: IBDF is an addon to control what mages cast. Guess what "IBDF" means.
+## Author: Shino <Synced> - Kronos
+
+IBDF.lua
