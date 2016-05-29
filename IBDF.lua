@@ -32,14 +32,32 @@ function IBDF:SendToggle()
 	end
 end
 
+function IBDF:SetFireball()
+	if IsRaidOfficer() then
+		self.fb = true
+		self:Print(self.msg[4])
+		SendAddonMessage("IBDF", "Fireball", "RAID")
+	end
+end
+
+function IBDF:SetFrostbolt()
+	if IsRaidOfficer() then
+		self.fb = false
+		self:Print(self.msg[3])
+		SendAddonMessage("IBDF", "Frostbolt", "RAID")
+	end
+end
+
 function IBDF:ReceiveToggle(msg, arg3)
 	if arg3 ~= UnitName("player") then
 		if msg == "Fireball" then
 			self.fb = true
 			self:Print(self.msg[4])
+			SpellStopCasting()
 		elseif msg == "Frostbolt" then
 			self.fb = false
 			self:Print(self.msg[3])
+			SpellStopCasting()
 		end
 	end
 end
